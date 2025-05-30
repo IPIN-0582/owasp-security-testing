@@ -1,0 +1,1003 @@
+<?xml version="1.0"?>
+<report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Arachni/arachni/v1.6.1.3/components/reporters/xml/schema.xsd">
+  <version>1.6.1.3</version>
+  <seed>30507a899767e81c81fc3a62e64f447a</seed>
+  <options>---
+browser_cluster:
+  local_storage: {}
+  session_storage: {}
+  wait_for_elements: {}
+  wait_for_timers: false
+  pool_size: 4
+  job_timeout: 60
+  worker_time_to_live: 250
+  ignore_images: false
+  screen_width: 1600
+  screen_height: 1200
+http:
+  user_agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3
+  request_timeout: 20000
+  request_redirect_limit: 5
+  request_concurrency: 10
+  request_queue_size: 50
+  request_headers: {}
+  response_max_size: 500000
+  cookies: {}
+  authentication_type: auto
+input:
+  values: {}
+  default_values:
+    name: arachni_name
+    user: arachni_user
+    usr: arachni_user
+    pass: 5543!%arachni_secret
+    txt: arachni_text
+    num: '132'
+    amount: '100'
+    mail: arachni@email.gr
+    account: '12'
+    id: '1'
+  without_defaults: false
+  force: false
+audit:
+  parameter_values: true
+  exclude_vector_patterns: []
+  include_vector_patterns: []
+  link_templates: []
+  links: true
+  forms: true
+  cookies: true
+  ui_inputs: true
+  ui_forms: true
+  jsons: true
+  xmls: true
+  nested_cookies: true
+scope:
+  directory_depth_limit: 10
+  auto_redundant_paths: 15
+  redundant_path_patterns: {}
+  dom_depth_limit: 4
+  exclude_file_extensions:
+  - gif
+  - bmp
+  - tif
+  - tiff
+  - jpg
+  - jpeg
+  - jpe
+  - pjpeg
+  - png
+  - ico
+  - psd
+  - xcf
+  - 3dm
+  - max
+  - svg
+  - eps
+  - drw
+  - ai
+  - asf
+  - rm
+  - mpg
+  - mpeg
+  - mpe
+  - 3gp
+  - 3g2
+  - avi
+  - flv
+  - mov
+  - mp4
+  - swf
+  - vob
+  - wmv
+  - aif
+  - mp3
+  - mpa
+  - ra
+  - wav
+  - wma
+  - mid
+  - m4a
+  - ogg
+  - flac
+  - zip
+  - zipx
+  - tar
+  - gz
+  - 7z
+  - rar
+  - bz2
+  - bin
+  - cue
+  - dmg
+  - iso
+  - mdf
+  - vcd
+  - raw
+  - exe
+  - apk
+  - app
+  - jar
+  - pkg
+  - deb
+  - rpm
+  - msi
+  - ttf
+  - otf
+  - woff
+  - woff2
+  - fon
+  - fnt
+  - css
+  - js
+  - pdf
+  - docx
+  - xlsx
+  - pptx
+  - odt
+  - odp
+  exclude_path_patterns: []
+  exclude_content_patterns: []
+  include_path_patterns: []
+  restrict_paths: []
+  extend_paths: []
+  url_rewrites: {}
+session: {}
+datastore:
+  report_path: "../dataset/ARACHNI/BenchmarkTest01316.afr"
+checks:
+- insecure_cross_domain_policy_access
+- backup_files
+- common_files
+- xst
+- origin_spoof_access_restriction_bypass
+- insecure_client_access_policy
+- captcha
+- http_only_cookies
+- insecure_cors_policy
+- credit_card
+- form_upload
+- html_objects
+- hsts
+- ssn
+- private_ip
+- x_frame_options
+- cookie_set_for_parent_domain
+- unencrypted_password_forms
+- mixed_resource
+- password_autocomplete
+- cvs_svn_users
+- insecure_cookies
+- emails
+- http_put
+- backup_directories
+- webdav
+- common_directories
+- directory_listing
+- interesting_responses
+- backdoors
+- localstart_asp
+- insecure_cross_domain_policy_headers
+- htaccess_limit
+- common_admin_interfaces
+- allowed_methods
+- code_injection_timing
+- code_injection_php_input_wrapper
+- no_sql_injection_differential
+- csrf
+- xss_tag
+- unvalidated_redirect_dom
+- session_fixation
+- xss_event
+- rfi
+- no_sql_injection
+- source_code_disclosure
+- path_traversal
+- sql_injection_timing
+- code_injection
+- trainer
+- os_cmd_injection
+- xss_dom_script_context
+- os_cmd_injection_timing
+- xss_path
+- xss_script_context
+- file_inclusion
+- ldap_injection
+- response_splitting
+- xpath_injection
+- xss
+- xxe
+- unvalidated_redirect
+- xss_dom
+- sql_injection_differential
+- sql_injection
+platforms: []
+plugins: {}
+no_fingerprinting: false
+authorized_by: 
+url: https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222
+</options>
+  <start_datetime>2025-05-29T06:37:17-07:00</start_datetime>
+  <finish_datetime>2025-05-29T06:37:31-07:00</finish_datetime>
+  <sitemap>
+    <entry url="https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222" code="200"/>
+  </sitemap>
+  <issues>
+    <issue>
+      <name>Blind SQL Injection (differential analysis)</name>
+      <description>
+Due to the requirement for dynamic content of today's web applications, many
+rely on a database backend to store data that will be called upon and processed
+by the web application (or other programs).
+Web applications retrieve data from the database by using Structured Query Language
+(SQL) queries.
+
+To meet demands of many developers, database servers (such as MSSQL, MySQL,
+Oracle etc.) have additional built-in functionality that can allow extensive
+control of the database and interaction with the host operating system itself.
+
+An SQL injection occurs when a value originating from the client's request is used
+within a SQL query without prior sanitisation. This could allow cyber-criminals
+to execute arbitrary SQL code and steal data or use the additional functionality
+of the database server to take control of more server components.
+
+The successful exploitation of a SQL injection can be devastating to an
+organisation and is one of the most commonly exploited web application vulnerabilities.
+
+This injection was detected as Arachni was able to inject specific SQL queries,
+that if vulnerable, result in the responses for each injection being different.
+This is known as a blind SQL injection vulnerability.
+</description>
+      <remedy_guidance>
+The only proven method to prevent against SQL injection attacks while still
+maintaining full application functionality is to use parameterized queries
+(also known as prepared statements).
+When utilising this method of querying the database, any value supplied by the
+client will be handled as a string value rather than part of the SQL query.
+
+Additionally, when utilising parameterized queries, the database engine will
+automatically check to make sure the string being used matches that of the column.
+For example, the database engine will check that the user supplied input is an
+integer if the database column is configured to contain integers.
+</remedy_guidance>
+      <remedy_code/>
+      <severity>high</severity>
+      <check>
+        <name>Blind SQL Injection (differential analysis)</name>
+        <description>
+It uses differential analysis to determine how different inputs affect behavior
+of the web application and checks if the displayed behavior is consistent with
+that of a vulnerable application.
+</description>
+        <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@arachni-scanner.com&gt;</author>
+        <version>0.4.5</version>
+        <shortname>sql_injection_differential</shortname>
+      </check>
+      <cwe>89</cwe>
+      <digest>4225445570</digest>
+      <references>
+        <reference title="OWASP" url="https://www.owasp.org/index.php/Blind_SQL_Injection"/>
+        <reference title="MITRE - CAPEC" url="http://capec.mitre.org/data/definitions/7.html"/>
+        <reference title="WASC" url="http://projects.webappsec.org/w/page/13246963/SQL%20Injection"/>
+        <reference title="W3 Schools" url="http://www.w3schools.com/sql/sql_injection.asp"/>
+      </references>
+      <vector>
+        <class>Arachni::Element::Link</class>
+        <type>link</type>
+        <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+        <action>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316</action>
+        <source/>
+        <seed>-1839' or '1'='1</seed>
+        <method>get</method>
+        <affected_input_name>BenchmarkTest01316</affected_input_name>
+        <inputs>
+          <input name="BenchmarkTest01316" value="-1839' or '1'='1"/>
+        </inputs>
+        <default_inputs>
+          <input name="BenchmarkTest01316" value="2222"/>
+        </default_inputs>
+      </vector>
+      <remarks>
+        <remark>
+          <commenter>differential_analysis</commenter>
+          <text>True expression: -1839' or '1'='1</text>
+        </remark>
+        <remark>
+          <commenter>differential_analysis</commenter>
+          <text>False expression: -1839' or '1'='2</text>
+        </remark>
+        <remark>
+          <commenter>differential_analysis</commenter>
+          <text>Control false expression: -1839</text>
+        </remark>
+      </remarks>
+      <page>
+        <body>Your query results are: 
+        John
+        Watson
+        30
+        johnwatson@sh.com
+    &lt;br/&gt;
+</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316</url>
+          <method>get</method>
+          <parameters>
+            <parameter name="BenchmarkTest01316" value="-1839' or '1'='1"/>
+          </parameters>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="30507a899767e81c81fc3a62e64f447a"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=-1839%27%20or%20%271%27%3D%271 HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 30507a899767e81c81fc3a62e64f447a&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=-1839'%20or%20'1'='1</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0888</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="100"/>
+            <header name="Date" value="Thu, 29 May 2025 13:37:30 GMT"/>
+          </headers>
+          <body>Your query results are: 
+        John
+        Watson
+        30
+        johnwatson@sh.com
+    &lt;br/&gt;
+</body>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 100&#xD;
+Date: Thu, 29 May 2025 13:37:30 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=-1839'%20or%20'1'='1</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </page>
+      <referring_page>
+        <body>Your query results are: 
+        Sherlock
+        Homes
+        32
+        sherlock@sh.com
+    &lt;br/&gt;
+</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <method>get</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="30507a899767e81c81fc3a62e64f447a"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222 HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 30507a899767e81c81fc3a62e64f447a&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.048</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="101"/>
+            <header name="Date" value="Thu, 29 May 2025 13:37:23 GMT"/>
+          </headers>
+          <body>Your query results are: 
+        Sherlock
+        Homes
+        32
+        sherlock@sh.com
+    &lt;br/&gt;
+</body>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 101&#xD;
+Date: Thu, 29 May 2025 13:37:23 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </referring_page>
+      <signature/>
+      <proof/>
+      <trusted>true</trusted>
+      <platform_type/>
+      <platform_name/>
+    </issue>
+    <issue>
+      <name>Interesting response</name>
+      <description>
+The server responded with a non 200 (OK) nor 404 (Not Found) status code.
+This is a non-issue, however exotic HTTP response status codes can provide useful
+insights into the behavior of the web application and assist with the penetration test.
+</description>
+      <remedy_guidance/>
+      <remedy_code/>
+      <severity>informational</severity>
+      <check>
+        <name>Interesting responses</name>
+        <description>Logs all non 200 (OK) server responses.</description>
+        <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@arachni-scanner.com&gt;</author>
+        <version>0.2.1</version>
+        <shortname>interesting_responses</shortname>
+      </check>
+      <digest>145398289</digest>
+      <references>
+        <reference title="w3.org" url="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"/>
+      </references>
+      <vector>
+        <class>Arachni::Element::Server</class>
+        <type>server</type>
+        <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222'%20arachni_xss_in_tag='30507a899767e81c81fc3a62e64f447a'%20blah='</url>
+        <action>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222'%20arachni_xss_in_tag='30507a899767e81c81fc3a62e64f447a'%20blah='</action>
+      </vector>
+      <remarks/>
+      <page>
+        <body>Error parsing XPath input: '2222&amp;#x27; arachni_xss_in_tag&amp;#x3d;&amp;#x27;30507a899767e81c81fc3a62e64f447a&amp;#x27; blah&amp;#x3d;&amp;#x27;'
+</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316</url>
+          <method>get</method>
+          <parameters>
+            <parameter name="BenchmarkTest01316" value="2222' arachni_xss_in_tag='30507a899767e81c81fc3a62e64f447a' blah='"/>
+          </parameters>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="30507a899767e81c81fc3a62e64f447a"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222%27%20arachni_xss_in_tag%3D%2730507a899767e81c81fc3a62e64f447a%27%20blah%3D%27 HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 30507a899767e81c81fc3a62e64f447a&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222'%20arachni_xss_in_tag='30507a899767e81c81fc3a62e64f447a'%20blah='</url>
+          <code>500</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0113</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="126"/>
+            <header name="Date" value="Thu, 29 May 2025 13:37:26 GMT"/>
+            <header name="Connection" value="close"/>
+          </headers>
+          <body>Error parsing XPath input: '2222&amp;#x27; arachni_xss_in_tag&amp;#x3d;&amp;#x27;30507a899767e81c81fc3a62e64f447a&amp;#x27; blah&amp;#x3d;&amp;#x27;'
+</body>
+          <raw_headers>HTTP/1.1 500 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 126&#xD;
+Date: Thu, 29 May 2025 13:37:26 GMT&#xD;
+Connection: close&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222'%20arachni_xss_in_tag='30507a899767e81c81fc3a62e64f447a'%20blah='</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </page>
+      <referring_page>
+        <body>Your query results are: 
+        Sherlock
+        Homes
+        32
+        sherlock@sh.com
+    &lt;br/&gt;
+</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <method>get</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="30507a899767e81c81fc3a62e64f447a"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222 HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 30507a899767e81c81fc3a62e64f447a&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.048</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="101"/>
+            <header name="Date" value="Thu, 29 May 2025 13:37:23 GMT"/>
+          </headers>
+          <body>Your query results are: 
+        Sherlock
+        Homes
+        32
+        sherlock@sh.com
+    &lt;br/&gt;
+</body>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 101&#xD;
+Date: Thu, 29 May 2025 13:37:23 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </referring_page>
+      <signature/>
+      <proof>HTTP/1.1 500 </proof>
+      <trusted>true</trusted>
+      <platform_type/>
+      <platform_name/>
+    </issue>
+    <issue>
+      <name>Allowed HTTP methods</name>
+      <description>
+There are a number of HTTP methods that can be used on a webserver (`OPTIONS`,
+`HEAD`, `GET`, `POST`, `PUT`, `DELETE` etc.).  Each of these methods perform a
+different function and each have an associated level of risk when their use is
+permitted on the webserver.
+
+A client can use the `OPTIONS` method within a request to query a server to
+determine which methods are allowed.
+
+Cyber-criminals will almost always perform this simple test as it will give a
+very quick indication of any high-risk methods being permitted by the server.
+
+Arachni discovered that several methods are supported by the server.
+</description>
+      <remedy_guidance>
+It is recommended that a whitelisting approach be taken to explicitly permit the
+HTTP methods required by the application and block all others.
+
+Typically the only HTTP methods required for most applications are `GET` and
+`POST`. All other methods perform actions that are rarely required or perform
+actions that are inherently risky.
+
+These risky methods (such as `PUT`, `DELETE`, etc) should be protected by strict
+limitations, such as ensuring that the channel is secure (SSL/TLS enabled) and
+only authorised and trusted clients are permitted to use them.
+</remedy_guidance>
+      <remedy_code/>
+      <severity>informational</severity>
+      <check>
+        <name>Allowed methods</name>
+        <description>Checks for supported HTTP methods.</description>
+        <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@arachni-scanner.com&gt;</author>
+        <version>0.2</version>
+        <shortname>allowed_methods</shortname>
+      </check>
+      <digest>2030256963</digest>
+      <references>
+        <reference title="Apache.org" url="http://httpd.apache.org/docs/2.2/mod/core.html#limitexcept"/>
+      </references>
+      <vector>
+        <class>Arachni::Element::Server</class>
+        <type>server</type>
+        <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+        <action>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</action>
+      </vector>
+      <remarks/>
+      <page>
+        <body/>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <method>options</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="30507a899767e81c81fc3a62e64f447a"/>
+          </headers>
+          <body/>
+          <raw>OPTIONS /benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222 HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 30507a899767e81c81fc3a62e64f447a&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0087</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Allow" value="GET, HEAD, POST, OPTIONS"/>
+            <header name="Content-Length" value="0"/>
+            <header name="Date" value="Thu, 29 May 2025 13:37:26 GMT"/>
+          </headers>
+          <body/>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Allow: GET, HEAD, POST, OPTIONS&#xD;
+Content-Length: 0&#xD;
+Date: Thu, 29 May 2025 13:37:26 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </page>
+      <referring_page>
+        <body>Your query results are: 
+        Sherlock
+        Homes
+        32
+        sherlock@sh.com
+    &lt;br/&gt;
+</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <method>get</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="30507a899767e81c81fc3a62e64f447a"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222 HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 30507a899767e81c81fc3a62e64f447a&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.048</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="101"/>
+            <header name="Date" value="Thu, 29 May 2025 13:37:23 GMT"/>
+          </headers>
+          <body>Your query results are: 
+        Sherlock
+        Homes
+        32
+        sherlock@sh.com
+    &lt;br/&gt;
+</body>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 101&#xD;
+Date: Thu, 29 May 2025 13:37:23 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </referring_page>
+      <signature/>
+      <proof>GET, HEAD, POST, OPTIONS</proof>
+      <trusted>true</trusted>
+      <platform_type/>
+      <platform_name/>
+    </issue>
+    <issue>
+      <name>Interesting response</name>
+      <description>
+The server responded with a non 200 (OK) nor 404 (Not Found) status code.
+This is a non-issue, however exotic HTTP response status codes can provide useful
+insights into the behavior of the web application and assist with the penetration test.
+</description>
+      <remedy_guidance/>
+      <remedy_code/>
+      <severity>informational</severity>
+      <check>
+        <name>Interesting responses</name>
+        <description>Logs all non 200 (OK) server responses.</description>
+        <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@arachni-scanner.com&gt;</author>
+        <version>0.2.1</version>
+        <shortname>interesting_responses</shortname>
+      </check>
+      <digest>1719544323</digest>
+      <references>
+        <reference title="w3.org" url="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"/>
+      </references>
+      <vector>
+        <class>Arachni::Element::Server</class>
+        <type>server</type>
+        <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316/%5C.30507a899767e81c81fc3a62e64f447a%5C</url>
+        <action>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316/%5C.30507a899767e81c81fc3a62e64f447a%5C</action>
+      </vector>
+      <remarks/>
+      <page>
+        <body>&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 400 &#x2013; Bad Request&lt;/title&gt;&lt;style type="text/css"&gt;body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 400 &#x2013; Bad Request&lt;/h1&gt;&lt;hr class="line" /&gt;&lt;p&gt;&lt;b&gt;Type&lt;/b&gt; Status Report&lt;/p&gt;&lt;p&gt;&lt;b&gt;Message&lt;/b&gt; Invalid URI&lt;/p&gt;&lt;p&gt;&lt;b&gt;Description&lt;/b&gt; The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/9.0.97&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316/%5C.30507a899767e81c81fc3a62e64f447a%5C</url>
+          <method>get</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="30507a899767e81c81fc3a62e64f447a"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/xpathi-00/BenchmarkTest01316/%5C.30507a899767e81c81fc3a62e64f447a%5C HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 30507a899767e81c81fc3a62e64f447a&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316/%5C.30507a899767e81c81fc3a62e64f447a%5C</url>
+          <code>400</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0031</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Type" value="text/html;charset=utf-8"/>
+            <header name="Content-Language" value="en"/>
+            <header name="Content-Length" value="795"/>
+            <header name="Date" value="Thu, 29 May 2025 13:37:25 GMT"/>
+            <header name="Connection" value="close"/>
+          </headers>
+          <body>&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 400 &#x2013; Bad Request&lt;/title&gt;&lt;style type="text/css"&gt;body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 400 &#x2013; Bad Request&lt;/h1&gt;&lt;hr class="line" /&gt;&lt;p&gt;&lt;b&gt;Type&lt;/b&gt; Status Report&lt;/p&gt;&lt;p&gt;&lt;b&gt;Message&lt;/b&gt; Invalid URI&lt;/p&gt;&lt;p&gt;&lt;b&gt;Description&lt;/b&gt; The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/9.0.97&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;</body>
+          <raw_headers>HTTP/1.1 400 &#xD;
+Content-Type: text/html;charset=utf-8&#xD;
+Content-Language: en&#xD;
+Content-Length: 795&#xD;
+Date: Thu, 29 May 2025 13:37:25 GMT&#xD;
+Connection: close&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316/%5C.30507a899767e81c81fc3a62e64f447a%5C</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </page>
+      <referring_page>
+        <body>Your query results are: 
+        Sherlock
+        Homes
+        32
+        sherlock@sh.com
+    &lt;br/&gt;
+</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <method>get</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="30507a899767e81c81fc3a62e64f447a"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222 HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 30507a899767e81c81fc3a62e64f447a&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.048</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="101"/>
+            <header name="Date" value="Thu, 29 May 2025 13:37:23 GMT"/>
+          </headers>
+          <body>Your query results are: 
+        Sherlock
+        Homes
+        32
+        sherlock@sh.com
+    &lt;br/&gt;
+</body>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 101&#xD;
+Date: Thu, 29 May 2025 13:37:23 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </referring_page>
+      <signature/>
+      <proof>HTTP/1.1 400 </proof>
+      <trusted>true</trusted>
+      <platform_type/>
+      <platform_name/>
+    </issue>
+  </issues>
+  <plugins>
+    <healthmap>
+      <name>Health map</name>
+      <description>Generates a simple list of safe/unsafe URLs.</description>
+      <results>
+        <map>
+          <with_issues>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316</with_issues>
+          <with_issues>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316/%5C.30507a899767e81c81fc3a62e64f447a%5C</with_issues>
+          <with_issues>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222</with_issues>
+          <with_issues>https://192.168.6.149:8443/benchmark/xpathi-00/BenchmarkTest01316?BenchmarkTest01316=2222'%20arachni_xss_in_tag='30507a899767e81c81fc3a62e64f447a'%20blah='</with_issues>
+        </map>
+        <total>4</total>
+        <with_issues>4</with_issues>
+        <without_issues>0</without_issues>
+        <issue_percentage>100</issue_percentage>
+      </results>
+    </healthmap>
+  </plugins>
+</report>

