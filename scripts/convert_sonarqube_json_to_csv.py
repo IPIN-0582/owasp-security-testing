@@ -1,8 +1,8 @@
 import json
 import csv
 
-json_file_path = '../data/sonar/sonar_report.json'
-csv_file_path = '../data/sonar/sonar_report.csv'
+json_file_path = '../data/sonarqube/sonarqube_report.json'
+csv_file_path = '../data/sonarqube/sonarqube_report.csv'
 
 # Đọc từng dòng, bỏ qua dòng rác
 valid_lines = []
